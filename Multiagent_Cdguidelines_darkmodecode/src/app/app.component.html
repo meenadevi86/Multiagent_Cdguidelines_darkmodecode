@@ -1,0 +1,110 @@
+<!-- src/app/app.component.html -->
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Shopping Cart</h1>
+      <button class="theme-switcher" (click)="toggleTheme()">Switch Theme</button>
+    </header>
+    <main class="main-content">
+      <section class="cart-items">
+        <h2>Your Cart</h2>
+        <div *ngFor="let item of cartItems" class="cart-item">
+          <img [src]="item.image" alt="{{item.name}}" class="item-image">
+          <div class="item-details">
+            <h3>{{item.name}}</h3>
+            <p>Price: {{item.price | currency}}</p>
+            <p>Quantity: 
+              <button (click)="decreaseQuantity(item)">-</button>
+              {{item.quantity}}
+              <button (click)="increaseQuantity(item)">+</button>
+            </p>
+            <p>Discount: {{item.discount}}%</p>
+            <button (click)="removeItem(item)">Remove</button>
+          </div>
+        </div>
+      </section>
+      <section class="cart-summary">
+        <h2>Summary</h2>
+        <p>Total Items: {{totalItems}}</p>
+        <p>Total Price: {{totalPrice | currency}}</p>
+        <button (click)="proceedToCheckout()">Proceed to Checkout</button>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2023 Shopping Cart</p>
+    </footer>
+  </div>
+</body>
+</html>
+
+<style>
+  :root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --button-background: #1f1f1f;
+    --button-text-color: #ffffff;
+  }
+
+  .dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .header, .footer {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .cart-items, .cart-summary {
+    margin-bottom: 2rem;
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .item-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 1rem;
+  }
+
+  .item-details {
+    flex: 1;
+  }
+
+  .theme-switcher {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  .theme-switcher:hover {
+    background-color: #333333;
+  }
+</style>

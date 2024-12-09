@@ -1,0 +1,32 @@
+<!-- src/app/shared/cart-icon/cart-icon.component.html -->
+<div class="cart-icon-container" [ngClass]="{'dark-mode': isDarkMode}">
+  <a routerLink="/cart" class="cart-link">
+    <mat-icon>shopping_cart</mat-icon>
+    <span class="item-count">{{ cartItemCount }}</span>
+  </a>
+</div>
+
+<!-- Dark mode styles -->
+<style>
+  .cart-icon-container.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  .cart-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  .cart-link .mat-icon {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+  .item-count {
+    font-size: 14px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    padding: 2px 6px;
+    color: #fff;
+  }
+</style>

@@ -1,0 +1,101 @@
+<div class="product-item" [ngClass]="{'dark-mode': isDarkMode}">
+  <div class="product-image">
+    <img [src]="product.imageUrl" [alt]="product.name" [ngClass]="{'dark-mode-image': isDarkMode}">
+  </div>
+  <div class="product-details">
+    <h2 class="product-name">{{ product.name }}</h2>
+    <p class="product-description">{{ product.description }}</p>
+    <div class="product-pricing">
+      <span class="product-price">{{ product.price | currency }}</span>
+      <span class="product-discount" *ngIf="product.discount">{{ product.discount }}% off</span>
+    </div>
+    <div class="product-quantity">
+      <button (click)="decreaseQuantity()">-</button>
+      <input type="number" [(ngModel)]="product.quantity" (change)="updateQuantity()">
+      <button (click)="increaseQuantity()">+</button>
+    </div>
+    <div class="product-actions">
+      <button (click)="removeItem()">Remove</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  :host {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+  }
+
+  .product-item.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .product-image img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .product-image img.dark-mode-image {
+    filter: brightness(0.8);
+  }
+
+  .product-details {
+    margin-left: 20px;
+  }
+
+  .product-name {
+    font-size: 1.5em;
+    margin: 0;
+  }
+
+  .product-description {
+    font-size: 1em;
+    margin: 5px 0;
+  }
+
+  .product-pricing {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+
+  .product-discount {
+    color: var(--discount-color);
+  }
+
+  .product-quantity {
+    display: flex;
+    align-items: center;
+  }
+
+  .product-quantity button {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .product-quantity input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+  }
+
+  .product-actions {
+    margin-top: 10px;
+  }
+
+  .product-actions button {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+</style>

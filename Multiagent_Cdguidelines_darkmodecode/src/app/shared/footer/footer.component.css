@@ -1,0 +1,112 @@
+/* src/app/shared/footer/footer.component.css */
+
+/* General footer styles */
+footer {
+  background-color: #121212;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}
+
+/* Footer links */
+footer a {
+  color: #bb86fc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Footer responsive design */
+@media (max-width: 768px) {
+  footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  footer a {
+    margin: 0 5px;
+  }
+}
+
+/* Dark mode specific styles */
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode footer a {
+  color: #bb86fc;
+}
+
+body.dark-mode footer a:hover {
+  color: #ffffff;
+}
+
+/* Footer layout */
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer .footer-content .left,
+footer .footer-content .right {
+  flex: 1;
+  text-align: left;
+}
+
+footer .footer-content .center {
+  flex: 2;
+  text-align: center;
+}
+
+/* Footer icons */
+footer .footer-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+footer .footer-icons a {
+  margin: 0 5px;
+  color: #bb86fc;
+}
+
+footer .footer-icons a:hover {
+  color: #ffffff;
+}
+
+/* Footer buttons */
+footer .footer-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+footer .footer-buttons button {
+  background-color: #bb86fc;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+footer .footer-buttons button:hover {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+/* Footer text */
+footer p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}

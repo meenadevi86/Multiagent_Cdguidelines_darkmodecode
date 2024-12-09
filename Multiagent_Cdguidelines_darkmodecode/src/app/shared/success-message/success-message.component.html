@@ -1,0 +1,37 @@
+<div class="success-message-container" [ngClass]="{'dark-mode': isDarkMode}">
+  <div class="success-message-content">
+    <span class="success-icon">✔️</span>
+    <span class="success-text">{{ successMessage }}</span>
+  </div>
+</div>
+
+<style>
+  .success-message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    background-color: var(--success-bg-color);
+    color: var(--success-text-color);
+  }
+
+  .success-message-container.dark-mode {
+    background-color: var(--success-bg-color-dark);
+    color: var(--success-text-color-dark);
+  }
+
+  .success-message-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .success-icon {
+    margin-right: 10px;
+  }
+
+  .success-text {
+    font-size: 1rem;
+  }
+</style>

@@ -1,0 +1,73 @@
+<div class="checkout-summary" [ngClass]="{'dark-mode': isDarkMode}">
+  <h2>Checkout Summary</h2>
+  <div class="cart-items">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <img [src]="item.image" alt="{{item.name}}" class="item-image">
+      <div class="item-details">
+        <h3>{{item.name}}</h3>
+        <p>Price: {{item.price | currency}}</p>
+        <p>Quantity: 
+          <button (click)="decreaseQuantity(item)">-</button>
+          {{item.quantity}}
+          <button (click)="increaseQuantity(item)">+</button>
+        </p>
+        <p>Discount: {{item.discount | percent}}</p>
+        <button (click)="removeItem(item)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div class="summary-details">
+    <p>Total Price: {{totalPrice | currency}}</p>
+    <p>Total Discount: {{totalDiscount | currency}}</p>
+    <p>Final Price: {{finalPrice | currency}}</p>
+  </div>
+  <div class="actions">
+    <button (click)="proceedToCheckout()">Proceed to Checkout</button>
+    <button (click)="continueShopping()">Continue Shopping</button>
+  </div>
+</div>
+
+<style>
+  .checkout-summary {
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  .dark-mode {
+    --background-color: #121212;
+    --text-color: #ffffff;
+  }
+  .cart-items {
+    display: flex;
+    flex-direction: column;
+  }
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .item-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  .item-details {
+    flex: 1;
+  }
+  .summary-details {
+    margin-top: 20px;
+  }
+  .actions {
+    margin-top: 20px;
+  }
+  button {
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: var(--button-hover-background-color);
+  }
+</style>

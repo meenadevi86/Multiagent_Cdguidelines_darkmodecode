@@ -1,0 +1,143 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h2 class="logo-text">Shopping Cart</h2>
+      <p>
+        Welcome to our shopping cart application. Enjoy a seamless and user-friendly experience while shopping in dark mode.
+      </p>
+      <div class="contact">
+        <span><i class="fas fa-phone"></i> &nbsp; +123-456-789</span>
+        <span><i class="fas fa-envelope"></i> &nbsp; info@shoppingcart.com</span>
+      </div>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section links">
+      <h2>Quick Links</h2>
+      <br>
+      <ul>
+        <a href="#"><li>Home</li></a>
+        <a href="#"><li>About</li></a>
+        <a href="#"><li>Services</li></a>
+        <a href="#"><li>Contact</li></a>
+        <a href="#"><li>Privacy Policy</li></a>
+      </ul>
+    </div>
+
+    <div class="footer-section contact-form">
+      <h2>Contact Us</h2>
+      <br>
+      <form action="index.html" method="post">
+        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+        <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+        <button type="submit" class="btn btn-big contact-btn">
+          <i class="fas fa-envelope"></i>
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; shoppingcart.com | Designed by YourName
+  </div>
+</footer>
+
+<style>
+  :root {
+    --primary-color: #333;
+    --secondary-color: #fff;
+    --accent-color: #f4f4f4;
+    --dark-bg: #1a1a1a;
+    --dark-text: #e0e0e0;
+    --dark-accent: #444;
+  }
+
+  .footer {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer .footer-section {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .footer .logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+
+  .footer .contact span {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .footer .socials a {
+    margin: 0 10px;
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+
+  .footer .socials a:hover {
+    color: var(--accent-color);
+  }
+
+  .footer .links ul {
+    list-style: none;
+  }
+
+  .footer .links ul a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin: 10px 0;
+    display: block;
+  }
+
+  .footer .links ul a:hover {
+    color: var(--accent-color);
+  }
+
+  .footer .contact-form .text-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background: var(--dark-accent);
+    color: var(--dark-text);
+  }
+
+  .footer .contact-form .btn {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .footer .contact-form .btn:hover {
+    background: var(--accent-color);
+  }
+
+  .footer-bottom {
+    background: var(--dark-accent);
+    color: var(--dark-text);
+    padding: 10px 0;
+    text-align: center;
+  }
+</style>

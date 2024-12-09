@@ -1,0 +1,131 @@
+:root {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --error-color: #cf6679;
+  --surface-color: #1e1e1e;
+  --on-surface-color: #ffffff;
+  --border-color: #333333;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-item:last-child {
+  border-bottom: none;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--on-surface-color);
+}
+
+.product-price {
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+.product-quantity {
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+.product-discount {
+  font-size: 14px;
+  color: var(--error-color);
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+}
+
+.product-actions button {
+  background-color: var(--primary-color);
+  color: var(--on-surface-color);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-actions button:hover {
+  background-color: var(--secondary-color);
+}
+
+.checkout-button {
+  background-color: var(--primary-color);
+  color: var(--on-surface-color);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
+    --error-color: #cf6679;
+    --surface-color: #1e1e1e;
+    --on-surface-color: #ffffff;
+    --border-color: #333333;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    padding: 8px;
+  }
+
+  .product-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-actions {
+    margin-top: 8px;
+  }
+
+  .checkout-button {
+    width: 100%;
+    text-align: center;
+  }
+}

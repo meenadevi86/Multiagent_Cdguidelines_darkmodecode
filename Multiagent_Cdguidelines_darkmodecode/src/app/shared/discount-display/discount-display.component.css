@@ -1,0 +1,104 @@
+:root {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --error-color: #cf6679;
+  --surface-color: #1f1f1f;
+  --on-surface-color: #ffffff;
+  --border-color: #333333;
+}
+
+.discount-display {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.discount-display h2 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+}
+
+.discount-display p {
+  font-size: 1em;
+  margin: 4px 0;
+}
+
+.discount-display .discount-amount {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.discount-display .original-price {
+  text-decoration: line-through;
+  color: var(--error-color);
+}
+
+.discount-display .final-price {
+  font-size: 1.4em;
+  color: var(--on-surface-color);
+}
+
+.discount-display .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.discount-display .actions button {
+  background-color: var(--primary-color);
+  color: var(--on-surface-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.discount-display .actions button:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  .discount-display {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+}
+
+@media (max-width: 600px) {
+  .discount-display {
+    padding: 12px;
+  }
+
+  .discount-display h2 {
+    font-size: 1.2em;
+  }
+
+  .discount-display p {
+    font-size: 0.9em;
+  }
+
+  .discount-display .discount-amount {
+    font-size: 1em;
+  }
+
+  .discount-display .final-price {
+    font-size: 1.2em;
+  }
+
+  .discount-display .actions {
+    flex-direction: column;
+  }
+
+  .discount-display .actions button {
+    margin-top: 8px;
+  }
+}

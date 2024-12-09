@@ -1,0 +1,88 @@
+/* Dark mode styles for the cart icon component */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #b3b3b3;
+  --background-color: #333333;
+  --icon-color: #ffffff;
+  --hover-color: #444444;
+  --active-color: #555555;
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.cart-icon:hover {
+  background-color: var(--hover-color);
+}
+
+.cart-icon:active {
+  background-color: var(--active-color);
+}
+
+.cart-icon img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.cart-icon .item-count {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cart-icon {
+    background-color: var(--background-color);
+  }
+
+  .cart-icon:hover {
+    background-color: var(--hover-color);
+  }
+
+  .cart-icon:active {
+    background-color: var(--active-color);
+  }
+
+  .cart-icon img {
+    filter: brightness(0) invert(1);
+  }
+
+  .cart-icon .item-count {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .cart-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cart-icon .item-count {
+    top: 3px;
+    right: 3px;
+    padding: 1px 4px;
+    font-size: 10px;
+  }
+}

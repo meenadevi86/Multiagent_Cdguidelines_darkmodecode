@@ -1,0 +1,42 @@
+<!-- src/app/components/checkout-button/checkout-button.component.html -->
+<button class="checkout-button" (click)="proceedToCheckout()">
+  Proceed to Checkout
+</button>
+
+<style>
+  :root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --button-background: #1f1f1f;
+    --button-text-color: #ffffff;
+    --button-hover-background: #333333;
+  }
+
+  .checkout-button {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .checkout-button:hover {
+    background-color: var(--button-hover-background);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .checkout-button {
+      width: 100%;
+      padding: 15px 0;
+    }
+  }
+</style>

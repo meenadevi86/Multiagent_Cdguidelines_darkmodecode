@@ -1,0 +1,102 @@
+/* Dark Mode Toggle Component CSS */
+
+/* Root variables for light and dark themes */
+:root {
+  --primary-color: #6200ea;
+  --primary-color-dark: #bb86fc;
+  --background-color-light: #ffffff;
+  --background-color-dark: #121212;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --toggle-background-light: #e0e0e0;
+  --toggle-background-dark: #333333;
+  --toggle-knob-light: #ffffff;
+  --toggle-knob-dark: #6200ea;
+}
+
+/* Base styles for the dark mode toggle component */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: var(--background-color-light);
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle.dark {
+  background-color: var(--background-color-dark);
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background-color: var(--toggle-background-light);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch.dark {
+  background-color: var(--toggle-background-dark);
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background-color: var(--toggle-knob-light);
+  border-radius: 50%;
+  transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-switch.dark .toggle-knob {
+  left: 27px;
+  background-color: var(--toggle-knob-dark);
+}
+
+/* Text styles for the dark mode toggle label */
+.toggle-label {
+  margin-left: 10px;
+  font-size: 16px;
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+}
+
+.dark-mode-toggle.dark .toggle-label {
+  color: var(--text-color-dark);
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 600px) {
+  .dark-mode-toggle {
+    padding: 8px;
+  }
+
+  .toggle-label {
+    font-size: 14px;
+  }
+}
+
+/* Media query to detect system's preferred color scheme */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-toggle {
+    background-color: var(--background-color-dark);
+  }
+
+  .toggle-switch {
+    background-color: var(--toggle-background-dark);
+  }
+
+  .toggle-knob {
+    background-color: var(--toggle-knob-dark);
+  }
+
+  .toggle-label {
+    color: var(--text-color-dark);
+  }
+}

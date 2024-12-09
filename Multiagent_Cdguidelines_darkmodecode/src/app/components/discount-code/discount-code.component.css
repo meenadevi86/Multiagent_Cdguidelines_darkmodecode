@@ -1,0 +1,85 @@
+:root {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --input-background: #1e1e1e;
+  --input-border: #333;
+  --button-background: #333;
+  --button-hover-background: #444;
+  --button-text-color: #fff;
+  --message-color: #ff9800;
+}
+
+.discount-code-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.discount-code-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: var(--text-color);
+}
+
+.discount-code-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--input-background);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  color: var(--text-color);
+}
+
+.discount-code-input::placeholder {
+  color: #888;
+}
+
+.discount-code-button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--button-background);
+  border: none;
+  border-radius: 4px;
+  color: var(--button-text-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.discount-code-button:hover {
+  background-color: var(--button-hover-background);
+}
+
+.discount-code-message {
+  margin-top: 10px;
+  color: var(--message-color);
+  font-size: 0.9em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --input-background: #1e1e1e;
+    --input-border: #333;
+    --button-background: #333;
+    --button-hover-background: #444;
+    --button-text-color: #fff;
+    --message-color: #ff9800;
+  }
+}
+
+@media (max-width: 600px) {
+  .discount-code-container {
+    padding: 15px;
+  }
+
+  .discount-code-input,
+  .discount-code-button {
+    padding: 8px;
+  }
+}

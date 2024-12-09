@@ -1,0 +1,168 @@
+<div class="home-page">
+  <header class="header">
+    <h1>Shopping Cart</h1>
+    <button (click)="toggleTheme()">Toggle Dark Mode</button>
+  </header>
+  
+  <section class="cart">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <img [src]="item.image" alt="{{item.name}}" class="cart-item-image">
+      <div class="cart-item-details">
+        <h2>{{item.name}}</h2>
+        <p>{{item.description}}</p>
+        <p>Price: {{item.price | currency}}</p>
+        <p>Discount: {{item.discount}}%</p>
+        <div class="quantity">
+          <button (click)="decreaseQuantity(item)">-</button>
+          <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item)">
+          <button (click)="increaseQuantity(item)">+</button>
+        </div>
+        <button (click)="removeItem(item)">Remove</button>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <button (click)="navigateToCheckout()">Checkout</button>
+    <button (click)="continueShopping()">Continue Shopping</button>
+  </footer>
+</div>
+
+<style>
+  :root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-background: #f0f0f0;
+    --button-text: #000000;
+  }
+
+  [data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --button-background: #333333;
+    --button-text: #ffffff;
+  }
+
+  .home-page {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cart {
+    margin-top: 20px;
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .cart-item-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+
+  .cart-item-details {
+    flex: 1;
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+  }
+
+  .quantity button {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .quantity input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .footer button {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  import { Component, OnInit } from '@angular/core';
+  import { CartService } from 'src/app/services/cart.service';
+
+  @Component({
+    selector: 'app-home-page',
+    templateUrl: './home-page.component.html',
+    styleUrls: ['./home-page.component.css']
+  })
+  export class HomePageComponent implements OnInit {
+    cartItems = [];
+
+    constructor(private cartService: CartService) {}
+
+    ngOnInit() {
+      this.cartItems = this.cartService.getCartItems();
+    }
+
+    toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+    }
+
+    decreaseQuantity(item) {
+      if (item.quantity > 1) {
+        item.quantity--;
+        this.cartService.updateCartItem(item);
+      }
+    }
+
+    increaseQuantity(item) {
+      item.quantity++;
+      this.cartService.updateCartItem(item);
+    }
+
+    updateQuantity(item) {
+      if (item.quantity < 1) {
+        item.quantity = 1;
+      }
+      this.cartService.updateCartItem(item);
+    }
+
+    removeItem(item) {
+      this.cartService.removeCartItem(item);
+      this.cartItems = this.cartItems.filter(cartItem => cartItem !== item);
+    }
+
+    navigateToCheckout() {
+      // Logic to navigate to the checkout page
+    }
+
+    continueShopping() {
+      // Logic to navigate to the shopping page
+    }
+  }
+</script>

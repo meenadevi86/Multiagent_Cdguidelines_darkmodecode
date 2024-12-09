@@ -1,0 +1,38 @@
+<div class="discount-code-container">
+  <form (ngSubmit)="applyDiscountCode()">
+    <mat-form-field appearance="fill">
+      <mat-label>Discount Code</mat-label>
+      <input matInput placeholder="Enter your discount code" [(ngModel)]="discountCode" name="discountCode" required>
+      <mat-error *ngIf="discountCodeError">{{ discountCodeError }}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Apply</button>
+  </form>
+  <div *ngIf="discountApplied" class="discount-info">
+    <p>Discount Applied: {{ discountAmount }}%</p>
+    <p>New Total: {{ newTotal | currency }}</p>
+  </div>
+</div>
+
+<style>
+  .discount-code-container {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .discount-code-container mat-form-field {
+    width: 100%;
+  }
+
+  .discount-code-container button {
+    margin-top: 10px;
+  }
+
+  .discount-info {
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+  }
+</style>

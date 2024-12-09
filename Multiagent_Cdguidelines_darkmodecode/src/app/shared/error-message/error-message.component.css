@@ -1,0 +1,61 @@
+/* src/app/shared/error-message/error-message.component.css */
+
+/* Base styles for the error message component */
+.error-message {
+  color: var(--error-color, #ff4d4f);
+  background-color: var(--error-background-color, #fff1f0);
+  border: 1px solid var(--error-border-color, #ffa39e);
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .error-message {
+    color: var(--error-color-dark, #ff7875);
+    background-color: var(--error-background-color-dark, #2b2b2b);
+    border: 1px solid var(--error-border-color-dark, #ff4d4f);
+  }
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 600px) {
+  .error-message {
+    font-size: 12px;
+    padding: 12px;
+  }
+}
+
+/* Icon styles within the error message */
+.error-message .icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Close button styles */
+.error-message .close-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 16px;
+}
+
+/* Hover effect for the close button */
+.error-message .close-btn:hover {
+  color: var(--error-close-btn-hover-color, #ff7875);
+}
+
+/* Dark mode hover effect for the close button */
+@media (prefers-color-scheme: dark) {
+  .error-message .close-btn:hover {
+    color: var(--error-close-btn-hover-color-dark, #ff4d4f);
+  }
+}

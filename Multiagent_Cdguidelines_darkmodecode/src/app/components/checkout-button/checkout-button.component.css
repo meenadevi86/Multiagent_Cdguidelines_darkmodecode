@@ -1,0 +1,71 @@
+/* src/app/components/checkout-button/checkout-button.component.css */
+
+/* Base styles for the checkout button */
+.checkout-button {
+  background-color: #1a1a1a; /* Dark background for dark mode */
+  color: #ffffff; /* White text for contrast */
+  border: 2px solid #333333; /* Slightly lighter border for definition */
+  padding: 10px 20px; /* Padding for button size */
+  font-size: 16px; /* Font size for readability */
+  border-radius: 5px; /* Rounded corners for modern look */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions for hover and active states */
+}
+
+/* Hover state for the checkout button */
+.checkout-button:hover {
+  background-color: #333333; /* Slightly lighter background on hover */
+  border-color: #555555; /* Lighter border on hover */
+}
+
+/* Active state for the checkout button */
+.checkout-button:active {
+  background-color: #555555; /* Even lighter background on active */
+  border-color: #777777; /* Lighter border on active */
+}
+
+/* Disabled state for the checkout button */
+.checkout-button:disabled {
+  background-color: #2a2a2a; /* Darker background for disabled state */
+  color: #888888; /* Grey text for disabled state */
+  border-color: #444444; /* Darker border for disabled state */
+  cursor: not-allowed; /* Not-allowed cursor to indicate non-clickability */
+}
+
+/* Responsive styles for different screen sizes */
+@media (max-width: 768px) {
+  .checkout-button {
+    font-size: 14px; /* Smaller font size for smaller screens */
+    padding: 8px 16px; /* Adjusted padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-button {
+    font-size: 12px; /* Even smaller font size for very small screens */
+    padding: 6px 12px; /* Adjusted padding for very small screens */
+  }
+}
+
+/* Dark mode specific styles */
+body.dark-mode .checkout-button {
+  background-color: #1a1a1a; /* Ensure dark background in dark mode */
+  color: #ffffff; /* Ensure white text in dark mode */
+  border-color: #333333; /* Ensure border color in dark mode */
+}
+
+body.dark-mode .checkout-button:hover {
+  background-color: #333333; /* Ensure hover background in dark mode */
+  border-color: #555555; /* Ensure hover border color in dark mode */
+}
+
+body.dark-mode .checkout-button:active {
+  background-color: #555555; /* Ensure active background in dark mode */
+  border-color: #777777; /* Ensure active border color in dark mode */
+}
+
+body.dark-mode .checkout-button:disabled {
+  background-color: #2a2a2a; /* Ensure disabled background in dark mode */
+  color: #888888; /* Ensure disabled text color in dark mode */
+  border-color: #444444; /* Ensure disabled border color in dark mode */
+}
